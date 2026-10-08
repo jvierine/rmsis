@@ -1,0 +1,21 @@
+[package]
+name = "rmsis"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.89"
+description = "Rust NRLMSISE-00 and an optional interface to original NRLMSIS 2.1"
+license = "MIT"
+repository = "https://github.com/jvierine/rmsis"
+
+[features]
+default = []
+fast = []
+msis21 = ["dep:libloading"]
+
+[dependencies]
+num-dual = { version = "0.15", default-features = false }
+num-traits = { version = "0.2", default-features = false }
+libloading = { version = "0.8", optional = true }
+
+[dev-dependencies]
+serde_json = "1"
